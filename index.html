@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harish Balaji Boominathan | Portfolio</title>
+    <link href="/css/blog.css" rel="stylesheet"/>
+    <link href="/css/trac.css" rel="stylesheet"/>
+    <link href="/css/markdown.css" rel="stylesheet"/>
+    <style>
+        body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; background: #fff; color: #222; }
+        .container { display: flex; min-height: 100vh; }
+        .left { background: #f7f7f7; width: 30%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 60px 30px; box-shadow: 2px 0 8px rgba(0,0,0,0.03); }
+        .left img { width: 220px; height: 220px; border-radius: 50%; object-fit: cover; margin-bottom: 30px; background: #e0e0e0; }
+        .left .photo-placeholder { width: 220px; height: 220px; border-radius: 50%; background: #e0e0e0; display: flex; align-items: center; justify-content: center; color: #888; font-size: 1.1em; margin-bottom: 30px; }
+        .left h1 { font-size: 3.5em; margin: 0 0 15px 0; line-height: 1.1; text-align: center; }
+        .left p { font-size: 1.75em; color: #555; line-height: 1.3; text-align: center; }
+        .right { width: 70%; padding: 70px 60px; }
+        section { margin-bottom: 55px; }
+        h2 { border-bottom: 3px solid #333; padding-bottom: 12px; margin-bottom: 30px; font-size: 2.75em; letter-spacing: 0.3px; color: #333; font-weight: 600; }
+        .job-title { font-weight: 700; font-size: 2em; margin-bottom: 8px; color: #333; }
+        .company { color: #555; font-size: 1.3em; margin-bottom: 10px; font-weight: 500; }
+        .date { color: #888; font-size: 1.1em; font-style: italic; }
+        ul { margin: 15px 0 25px 35px; font-size: 1.5em; line-height: 1.8; color: #444; }
+        ul li { margin-bottom: 8px; }
+        .project-title { font-weight: 700; font-size: 1.875em; margin-bottom: 12px; color: #333; }
+        .contact-links a { margin-right: 25px; color: #333; text-decoration: none; font-weight: 600; font-size: 1.625em; transition: color 0.2s ease; }
+        .contact-links a:hover { text-decoration: underline; color: #666; }
+        .job-title:hover, .project-title:hover { color: #666; transition: color 0.2s ease; }
+        section:last-child { margin-bottom: 0; }
+        @media (max-width: 900px) {
+            .container { flex-direction: column; }
+            .left, .right { width: 100%; box-shadow: none; }
+            .left { flex-direction: row; justify-content: flex-start; align-items: center; padding: 30px 20px; }
+            .left .photo-placeholder, .left img { margin-bottom: 0; margin-right: 30px; width: 150px; height: 150px; }
+            .left h1 { font-size: 2.2em; }
+            .left p { font-size: 1.2em; }
+            .right { padding: 40px 30px; }
+        }
+        @media (max-width: 600px) {
+            .right { padding: 24px 8px; }
+            .left { padding: 16px 4px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="left">
+        <img src="/headshot_circle.png" alt="Harish Balaji Boominathan headshot">
+        <div>
+            <h1>Harish Balaji Boominathan</h1>
+            <p>MS Computer Engineering @ NYU</p>
+        </div>
+    </div>
+    <div class="right">
+        <section>
+            <h2>Professional Experience</h2>
+            <div class="job-title">Google Summer of Code – Open Source Contributor</div>
+            <div class="company">University of California, OSPO <span class="date">(Jun 2025 – Sep 2025)</span></div>
+            <ul>
+                <li>Designed privacy metrics quantifying re-identification risk across structured datasets, including a normalized risk scoring system.</li>
+                <li>Integrated image dataset support with pre-trained vision models (CLIP, ViT, DINOv2).</li>
+                <li>Prototyped a RAG-based chatbot for interactive data readiness explanations (92% satisfaction, 1,000+ users).</li>
+                <li>Enhanced evaluation pipeline for multi-modality and visual dashboards of quality, fairness, and privacy metrics.</li>
+            </ul>
+            <div class="job-title">Graduate Research Assistant – VIDA Lab</div>
+            <div class="company">New York University <span class="date">(Jan 2025 – Present)</span></div>
+            <ul>
+                <li>Developed multi-sensor fusion tools for 12+ nodes across Brooklyn intersections, aggregating 2+ hours of multimodal data.</li>
+                <li>Deployed HRNet-based pose estimation on traffic video feeds (1,000+ pedestrians, safety risk analysis).</li>
+                <li>Built ML pipelines to classify 5,000+ objects and compute pedestrian speed with 95%+ accuracy.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Featured Projects</h2>
+            <div class="project-title">El Silencio Acoustic Explorer – Edge AI for Biodiversity Monitoring</div>
+            <ul>
+                <li>Multi-branch pipeline: RawAudioCNN, EfficientNetB3 (LoRA), ResNet50, PANNs-based embeddings.</li>
+                <li>Achieved 385% throughput increase (13,100 FPS), model size 197.5MB, latency 23ms/sample (RTX6000).</li>
+                <li>Edge deployment on Raspberry Pi 5, real-time metrics with Prometheus/Grafana (&lt;75ms latency, 8+ users).</li>
+                <li>Integrated MLflow for experiment tracking and edge reliability monitoring.</li>
+            </ul>
+            <div class="project-title">RouteWise – Intelligent Route Optimization Engine</div>
+            <ul>
+                <li>Five algorithmic solvers: Greedy, Brute Force, Dynamic Programming, Constraint Programming (OR-Tools), hybrid genetic-annealing.</li>
+                <li>Reduced planning time by 85% with smart algorithm selection and weighted preference scoring.</li>
+                <li>Minimized API usage by 80% via caching and batch requests to Google Distance Matrix APIs.</li>
+                <li>Route generation with Google Maps Static API, supporting multi-day, preference-weighted itineraries.</li>
+            </ul>
+            <div class="project-title">DailyPod – Automated News-to-Audio Intelligence Platform</div>
+            <ul>
+                <li>Aggregates multilingual news from NewsAPI, deduplicates with custom NLP, ranks by relevance/recency.</li>
+                <li>Summarizes articles using GPT-3.5 with language-aware prompts.</li>
+                <li>Text-to-speech audio delivery via WhatsApp Business API.</li>
+                <li>Backend: Flask, Celery, Redis for async processing, scaling, and retry logic. Monitoring via dashboards.</li>
+            </ul>
+            <div class="project-title">XGChurn – Predictive Analytics Platform</div>
+            <ul>
+                <li>XGBoost classifier (87% accuracy, 85% ROC-AUC) with SHAP interpretability.</li>
+                <li>Streamlit dashboard for churn probability exploration (2,000+ customers).</li>
+                <li>Feature engineering: credit score drop, transaction frequency, etc.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Education</h2>
+            <div><strong>New York University</strong><br>Master of Science in Computer Engineering (Sep 2024 – May 2026)<br>GPA: 4.00 / 4.00</div>
+            <ul>
+                <li>Research: Fine-tuned RoBERTa on 120K+ news articles with LoRA adapters (92%+ accuracy, 0.5M trainable params).</li>
+                <li>Core: Machine Learning, Deep Learning, ML Systems Engineering, Applied Matrix Theory</li>
+            </ul>
+            <div><strong>SASTRA University</strong><br>Bachelor of Technology in Computer Science and Engineering (Aug 2020 – Jun 2024)</div>
+            <ul>
+                <li>Technical Foundation: Algorithms, Operating Systems, Machine Learning, Computer Networks, Databases</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Technical Expertise</h2>
+            <div><strong>Languages & Infrastructure:</strong> Python, C++, SQL, Bash, FastAPI, Git, Docker, Kubernetes, Linux</div>
+            <div><strong>ML & Data Science:</strong> PyTorch, TensorFlow, ONNX, MLflow, Streamlit, Prometheus, Grafana</div>
+            <div><strong>Specializations:</strong> Distributed Systems, System Design, Model Optimization, Edge Deployment, CI/CD, Privacy-Preserving ML, MLOps</div>
+        </section>
+        <section>
+            <h2>Connect</h2>
+            <div class="contact-links">
+                <a href="mailto:harish.balaji.b@nyu.edu">Email</a>
+                <a href="https://github.com/harishbalajib" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/harishbalajiboominathan" target="_blank">LinkedIn</a>
+            </div>
+        </section>
+        <section>
+            <p style="font-size:1.1em; color:#444; margin-top:32px;">This portfolio showcases the systems, models, and tools I've architected—from privacy-focused ML infrastructure to scalable backend pipelines and edge-deployed intelligence. Explore the repositories or reach out for collaboration opportunities.</p>
+        </section>
+    </div>
+</div>
+</body>
+</html>
