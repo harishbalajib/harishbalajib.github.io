@@ -28,6 +28,29 @@
         .contact-links a:hover { text-decoration: underline; color: #666; }
         .job-title:hover, .project-title:hover { color: #666; transition: color 0.2s ease; }
         section:last-child { margin-bottom: 0; }
+        
+        /* Project Cards */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-top: 30px; }
+        .project-card { background: #f9f9f9; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .project-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+        .project-image { width: 100%; height: 200px; border-radius: 8px; object-fit: cover; margin-bottom: 20px; background: #e0e0e0; }
+        .project-card h3 { font-size: 1.5em; margin-bottom: 12px; color: #333; }
+        .project-card p { font-size: 1.1em; line-height: 1.6; color: #555; margin-bottom: 15px; }
+        .project-tech { font-size: 0.9em; color: #777; font-style: italic; }
+        .project-links { margin-top: 15px; }
+        .project-links a { color: #333; text-decoration: none; font-weight: 600; margin-right: 15px; font-size: 0.95em; }
+        .project-links a:hover { text-decoration: underline; }
+        
+        /* Blog Section */
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 30px; }
+        .blog-card { background: #f9f9f9; border-radius: 10px; padding: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.06); transition: transform 0.2s ease; }
+        .blog-card:hover { transform: translateY(-2px); }
+        .blog-card h3 { font-size: 1.3em; margin-bottom: 10px; color: #333; }
+        .blog-card p { font-size: 1em; line-height: 1.5; color: #555; margin-bottom: 12px; }
+        .blog-date { font-size: 0.85em; color: #888; }
+        .blog-card a { color: #333; text-decoration: none; font-weight: 600; }
+        .blog-card a:hover { text-decoration: underline; }
+        
         @media (max-width: 900px) {
             .container { flex-direction: column; }
             .left, .right { width: 100%; box-shadow: none; }
@@ -36,6 +59,8 @@
             .left h1 { font-size: 2.2em; }
             .left p { font-size: 1.2em; }
             .right { padding: 40px 30px; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .blog-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 600px) {
             .right { padding: 24px 8px; }
@@ -71,36 +96,75 @@
                 <li>Built ML pipelines to classify 5,000+ objects and compute pedestrian speed with 95%+ accuracy.</li>
             </ul>
         </section>
+        
         <section>
             <h2>Featured Projects</h2>
-            <div class="project-title">El Silencio Acoustic Explorer – Edge AI for Biodiversity Monitoring</div>
-            <ul>
-                <li>Multi-branch pipeline: RawAudioCNN, EfficientNetB3 (LoRA), ResNet50, PANNs-based embeddings.</li>
-                <li>Achieved 385% throughput increase (13,100 FPS), model size 197.5MB, latency 23ms/sample (RTX6000).</li>
-                <li>Edge deployment on Raspberry Pi 5, real-time metrics with Prometheus/Grafana (&lt;75ms latency, 8+ users).</li>
-                <li>Integrated MLflow for experiment tracking and edge reliability monitoring.</li>
-            </ul>
-            <div class="project-title">RouteWise – Intelligent Route Optimization Engine</div>
-            <ul>
-                <li>Five algorithmic solvers: Greedy, Brute Force, Dynamic Programming, Constraint Programming (OR-Tools), hybrid genetic-annealing.</li>
-                <li>Reduced planning time by 85% with smart algorithm selection and weighted preference scoring.</li>
-                <li>Minimized API usage by 80% via caching and batch requests to Google Distance Matrix APIs.</li>
-                <li>Route generation with Google Maps Static API, supporting multi-day, preference-weighted itineraries.</li>
-            </ul>
-            <div class="project-title">DailyPod – Automated News-to-Audio Intelligence Platform</div>
-            <ul>
-                <li>Aggregates multilingual news from NewsAPI, deduplicates with custom NLP, ranks by relevance/recency.</li>
-                <li>Summarizes articles using GPT-3.5 with language-aware prompts.</li>
-                <li>Text-to-speech audio delivery via WhatsApp Business API.</li>
-                <li>Backend: Flask, Celery, Redis for async processing, scaling, and retry logic. Monitoring via dashboards.</li>
-            </ul>
-            <div class="project-title">XGChurn – Predictive Analytics Platform</div>
-            <ul>
-                <li>XGBoost classifier (87% accuracy, 85% ROC-AUC) with SHAP interpretability.</li>
-                <li>Streamlit dashboard for churn probability exploration (2,000+ customers).</li>
-                <li>Feature engineering: credit score drop, transaction frequency, etc.</li>
-            </ul>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="/assets/img/project1.png" alt="El Silencio Project" class="project-image">
+                    <h3>El Silencio Acoustic Explorer</h3>
+                    <p>Edge AI system for biodiversity monitoring using multi-branch ML pipeline with real-time audio processing.</p>
+                    <div class="project-tech">Python, PyTorch, Edge Computing, MLflow</div>
+                    <div class="project-links">
+                        <a href="#" target="https://github.com/harishbalajib/XGChurn">GitHub</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="/assets/img/project2.png" alt="RouteWise Project" class="project-image">
+                    <h3>RouteWise</h3>
+                    <p>Intelligent route optimization engine with five algorithmic solvers and smart preference scoring.</p>
+                    <div class="project-tech">Python, OR-Tools, Google APIs, Flask</div>
+                    <div class="project-links">
+                        <a href="#" target="https://github.com/harishbalajib/XGChurn">GitHub</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="/assets/img/project3.png" alt="DailyPod Project" class="project-image">
+                    <h3>DailyPod</h3>
+                    <p>Automated news-to-audio intelligence platform with multilingual aggregation and WhatsApp delivery.</p>
+                    <div class="project-tech">Flask, Celery, Redis, GPT-3.5, WhatsApp API</div>
+                    <div class="project-links">
+                        <a href="#" target="https://github.com/harishbalajib/XGChurn">GitHub</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="/assets/img/project4.png" alt="XGChurn Project" class="project-image">
+                    <h3>XGChurn</h3>
+                    <p>Predictive analytics platform for customer churn with XGBoost classifier and SHAP interpretability.</p>
+                    <div class="project-tech">XGBoost, SHAP, Streamlit, Python</div>
+                    <div class="project-links">
+                        <a href="#" target="https://github.com/harishbalajib/XGChurn">GitHub</a>
+                    </div>
+                </div>
+            </div>
         </section>
+        
+        <section>
+            <h2>Blog & Writing</h2>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <h3><a href="#" target="https://ucsc-ospo.github.io/report/osre25/lbl/aidrin/20250725-harish_balaji/">Building Privacy-First ML Systems</a></h3>
+                    <p>Exploring the challenges and solutions in creating machine learning systems that prioritize user privacy...</p>
+                    <div class="blog-date">December 2024</div>
+                </div>
+                
+                <div class="blog-card">
+                    <h3><a href="#" target="https://ucsc-ospo.github.io/report/osre25/lbl/aidrin/20250725-harish_balaji/">Edge AI: From Theory to Practice</a></h3>
+                    <p>Lessons learned from deploying AI models on edge devices and optimizing for real-world constraints...</p>
+                    <div class="blog-date">November 2024</div>
+                </div>
+                
+                <div class="blog-card">
+                    <h3><a href="#" target="https://ucsc-ospo.github.io/report/osre25/lbl/aidrin/20250725-harish_balaji/">The Future of Multi-Sensor Fusion</a></h3>
+                    <p>How combining multiple data sources can create more robust and intelligent systems...</p>
+                    <div class="blog-date">October 2024</div>
+                </div>
+            </div>
+        </section>
+        
         <section>
             <h2>Education</h2>
             <div><strong>New York University</strong><br>Master of Science in Computer Engineering (Sep 2024 – May 2026)<br>GPA: 4.00 / 4.00</div>
@@ -113,12 +177,14 @@
                 <li>Technical Foundation: Algorithms, Operating Systems, Machine Learning, Computer Networks, Databases</li>
             </ul>
         </section>
+        
         <section>
             <h2>Technical Expertise</h2>
             <div><strong>Languages & Infrastructure:</strong> Python, C++, SQL, Bash, FastAPI, Git, Docker, Kubernetes, Linux</div>
             <div><strong>ML & Data Science:</strong> PyTorch, TensorFlow, ONNX, MLflow, Streamlit, Prometheus, Grafana</div>
             <div><strong>Specializations:</strong> Distributed Systems, System Design, Model Optimization, Edge Deployment, CI/CD, Privacy-Preserving ML, MLOps</div>
         </section>
+        
         <section>
             <h2>Connect</h2>
             <div class="contact-links">
@@ -127,8 +193,9 @@
                 <a href="https://www.linkedin.com/in/harishbalajiboominathan" target="_blank">LinkedIn</a>
             </div>
         </section>
+        
         <section>
-            <p style="font-size:1.1em; color:#444; margin-top:32px;">This portfolio showcases the systems, models, and tools I've architected—from privacy-focused ML infrastructure to scalable backend pipelines and edge-deployed intelligence. Explore the repositories or reach out for collaboration opportunities.</p>
+            <p style="font-size:1.1em; color:#444; margin-top:32px;">I care about building tools that people can genuinely trust and rely on. Whether it's designing privacy-first systems or developing software for sensors that help prevent accidents before they happen, I'm driven by problems that create real-world impact.</p>
         </section>
     </div>
 </div>
